@@ -1,0 +1,97 @@
+@media (min-width: 360px) and (max-width: 736px){
+
+    body{
+
+        background-color: rgb(165, 154, 154);
+    }
+header{
+    background-color: black;
+    height:80px ;
+    color: blanchedalmond;
+}
+    h2{
+        color: rgb(228, 216, 216);
+        font-size: 200%;
+        padding-top: 4%;
+        padding-left: 4%;
+    }
+    .para{
+        text-align: center;
+        background-color:rgb(105, 103, 103) ;
+        height: 40px;
+        color: white;
+        padding-top: 4%;
+        margin-bottom: 20px;
+        font-size: 150%;
+    }
+
+    main{
+        margin-top: 50px;
+    }
+    form div{
+        height: 50px;
+        width: 80%;
+        margin-top: 20px ;
+        background-color: rgb(166, 175, 174); 
+        border-radius: 3%;
+        margin-left: 10%;
+    }
+    #input  {
+    /* background-color: rgb(241, 241, 240); */
+    height: 98%;
+    width: 98%;
+    border-radius: 3%;
+   
+    }
+    form div label{
+   
+        padding-left: 20px;
+        font-size: 130%;
+        text-align: center;
+        padding-top: 100px;
+        align-items: center;
+       
+    }
+    #title,#author{
+
+  margin: 20px;
+    }
+    #title{
+
+        margin-left: 42px;
+          }
+    #sub {
+        margin-top: 20px ;
+        background-color: #000;
+        color: #fff;
+        height: 50px;
+        width: 80%;
+        border: none;
+        font-size: 100%;
+        margin-left: 10%;
+    }
+    
+
+    #result{
+        height: 500px;
+        width: 80%;
+        background-color: thistle;
+        margin-left: 10%;
+        margin-bottom: 10%;
+        text-align: center;
+    }
+    #result img{
+       margin-top: 20px;
+       height: 250px;
+       width: 50%;
+    }
+    #result h3,#result h5,#result p{
+        margin-top: 10px;
+    }
+    #result p{
+        height: 100px;
+        overflow: scroll;
+    }
+
+}
+

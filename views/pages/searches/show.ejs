@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/styles/rest.css" >
+    <link rel="stylesheet" href="/styles/base.css" >
+    <link rel="stylesheet" href="/styles/layout.css" >
+    <link rel="stylesheet" href="/styles/modules.css" >
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+    <header> <h2> Best Books!</h2></header>
+    <p class='para'>Search by Title or Author</p>
+    <main>
     <ul>
         <% list.forEach(e=>{ %>
-           <div><img src='<%= e.img %>'>
+           <div id='result'><img src='<%= e.img %>'>
             <br>
-            <h2><%= e.title %></h2> 
+            <h3><%= e.title %></h2> 
             
-             <h4><%= e.authors %></h4>
+             <h5><%= e.authors %></h4>
              
             <p> <%= e.description %> </p>
             </div> 
        <% }) %>
         
     </ul>
+    </main>
 </body>
 </html>
