@@ -58,18 +58,19 @@ function hadnelSearch(req, res) {
   // console.log(req.body);
 
 
-  superagent.get(url).then(data => {
+  superagent.get(url)
+  .then(data => {
     let arr = data.body.items.map(e => {
       let newbook = new Book(e);
       return newbook;
     })
-      // .catch(error => {
-      //   console.log(error);
-      //   res.render('pages/error');
-      // })
-
-    // console.log(arr)
+   
+    console.log(arr)
     res.render('pages/searches/show', { list: arr })
+  })
+  .catch(error => {
+    console.log(error);
+    res.render('pages/error');
   })
 
 }
