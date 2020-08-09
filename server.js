@@ -65,11 +65,11 @@ function hadnelSearch(req, res) {
       return newbook;
     })
    
-    console.log(arr)
+    // console.log(arr)
     res.render('pages/searches/show', { list: arr })
   })
   .catch(error => {
-    console.log(error);
+    // console.log(error);
     res.render('pages/error');
   })
 
