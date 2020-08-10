@@ -56,3 +56,32 @@ Start time: 6:35 pm
 Finish time: 6:10pm
 
 Actual time needed to complete: 10min
+
+
+
+
+
+
+
+## Lab 12
+
+Number and name of feature:step1
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 1:15 pm
+
+Finish time: 5 pm
+
+Actual time needed to complete: 4 hours
+
+
+Number and name of feature:step2
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 1:15 pm
+
+Finish time: 5 pm
+
+Actual time needed to complete: 4 hours

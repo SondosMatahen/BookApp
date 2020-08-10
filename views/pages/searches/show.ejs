@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="/styles/rest.css" >
-    <link rel="stylesheet" href="/styles/base.css" >
-    <link rel="stylesheet" href="/styles/layout.css" >
-    <link rel="stylesheet" href="/styles/modules.css" >
-    
+    <link rel="stylesheet" href="/styles/rest.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/modules.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <header> <h2> Best Books!</h2></header>
+    <header>
+        <h2> Best Books!</h2>
+    </header>
     <p class='para'>Search by Title or Author</p>
     <main>
-    <ul>
-        <% list.forEach(e=>{ %>
-           <div id='result'><img src='<%= e.img %>'>
-            <br>
-            <h3><%= e.title %></h2> 
-            
-             <h5><%= e.authors %></h4>
-             
-            <p> <%= e.description %> </p>
-            </div> 
-       <% }) %>
-        
-    </ul>
+        <ul>
+            <% list.forEach(e=>{ %>
+            <div class='result'>
+                <img src='<%= e.img %>'>
+                <br>
+                <h3><%= e.title %></h2>
+
+                <h5><%= e.authors %></h4>
+
+                <p> <%= e.description %> </p>
+
+
+
+
+                <form action="/books" method="POST" class='addForm'>
+                            <input type="text" name="title" value="<%=e.title%>">
+                            <input type="text" name="author" value="<%=e.authors%>">
+                            <input type="text" name="isbn" value="<%=e.isbn%>">
+                            <input type="text" name="image_url" value="<%=e.img%>">
+                            <input type="text" name="description" value="<%=e.description%>">
+                            <input type="text" name="bookshelf" value="<%=e.bookshelf%>">
+                            <br>
+                            <button class='sub'>Select Book</button>
+                </form>
+                       
+
+            </div>
+            <% }) %>
+            <!-- <button type="submit" id='sub'>Add To Saved Books</button> -->
+
+
+            <p>osvdvsn</p>
+        </ul>
+
     </main>
 </body>
+
 </html>
