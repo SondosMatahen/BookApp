@@ -19,7 +19,21 @@
    
     <!-- <header> <a href='/hello'>Hello World</a></header> -->
     <h1>Hello World</h1>
+    <h2><%= bookCount %> Saved Books</h2>
     <a href='/search/new'>search</a>
-    <!-- <a href='/search/show'>search</a> -->
+    <ul>
+        <% books.forEach(book=>{ %>
+           <div id='result'><img src='<%= book.image_url %>'>
+            <br>
+            <h3><%= book.title %></h2> 
+            <br>
+             <h5><%= book.author %></h4>
+            <a href="/books/<%= book.id%>"><button>View Details</button></a>
+          
+            <!-- <p> <%= book.description %> </p> -->
+            </div> 
+       <% }) %>
+        
+    </ul>
 </body>
 </html>
