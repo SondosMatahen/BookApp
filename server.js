@@ -80,7 +80,7 @@ function hadnelSearch(req, res) {
 
 
 let image = `https://i.imgur.com/J5LVHEL.jpg`
-let reg = /http/gi;
+let reg = /https?/gi;
 
 //-----constructor function-----
 function Book(data) {
