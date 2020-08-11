@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <link rel="stylesheet" href="/styles/rest.css">
-    <link rel="stylesheet" href="/styles/base.css">
-    <link rel="stylesheet" href="/styles/layout.css">
-    <link rel="stylesheet" href="/styles/modules.css">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
+    <head>
+        <%- include('../../layout/head')%>
+        <title>Search Books</title>
+    </head>
+    
 <body>
     <header>
         <h2> Best Books!</h2>
@@ -23,28 +19,31 @@
             <div class='result'>
                 <img src='<%= e.img %>'>
                 <br>
-                <h3><%= e.title %></h2>
+                <h3>Title :<%= e.title %></h2>
+                    <br>
+                <h5>Authors :<%= e.authors %></h4>
+                    <br>
+                <p>Description: <%= e.description %> </p>
 
-                <h5><%= e.authors %></h4>
-
-                <p> <%= e.description %> </p>
-
-
+                <br>
 
 
                 <form action="/books" method="POST" class='addForm'>
-                            <input type="text" name="title" value="<%=e.title%>">
-                            <input type="text" name="author" value="<%=e.authors%>">
-                            <input type="text" name="isbn" value="<%=e.isbn%>">
-                            <input type="text" name="image_url" value="<%=e.img%>">
-                            <input type="text" name="description" value="<%=e.description%>">
-                            <input type="text" name="bookshelf" value="<%=e.bookshelf%>">
+                            <input type="hidden" name="title" value="<%=e.title%>">
+                            <input type="hidden" name="author" value="<%=e.authors%>">
+                            <input type="hidden" name="isbn" value="<%=e.isbn%>">
+                            <input type="hidden" name="image_url" value="<%=e.img%>">
+                            <input type="hidden" name="description" value="<%=e.description%>">
+                            <label for="bookshelf">BookShelf</label>
+                            <input type="text" name="bookshelf" value="<%=e.bookshelf%>" id='bookshelf'> 
                             <br>
-                            <button class='sub'>Select Book</button>
+                            <button class='sub'>Select This Book</button>
+                            <br>
                 </form>
                        
 
             </div>
+          
             <% }) %>
             <!-- <button type="submit" id='sub'>Add To Saved Books</button> -->
 

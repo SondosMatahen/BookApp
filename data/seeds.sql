@@ -1,3 +1,4 @@
 INSERT INTO books (author, title, isban, image_url, description,bookshelf) 
 VALUES('Agatha Christie','Starring Miss Marple','UOM:39015046418680','https://books.google.com/books/content?id=mIdaAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api','Brings together three of Miss Jane Marple\s most celebrated cases: A Murder is Announced, The Body in the Library, and Murder with Mirrors','Fiction'),
+
 ('Dr Katrin Berndt','Heroism in the Harry Potter Series','9781409478416', 'https://books.google.com/books/content?id=o-QCOFDHmPEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api','Taking up the various conceptions of heroism that are conjured in the Harry Potter series, this collection examines the ways fictional heroism in the twenty-first century challenges the idealized forms of a somewhat simplistic masculinity associated with genres like the epic, romance and classic adventure story.','Literary Criticism');
