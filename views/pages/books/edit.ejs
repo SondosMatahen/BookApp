@@ -1,0 +1,33 @@
+<section>
+
+    <form action="/books/<%= result.id %>?_method=PUT" method="POST">
+        title
+        <input type="text" name="title" placeholder="Populate Title">
+        <br>author
+        <input type="text" name="author" placeholder="Populate Author">
+        <br>isbn
+        <input type="text" name="isbn" placeholder="Populate ISBN">
+        <br>image_url
+        <input type="text" name="image_url" placeholder="Populate Image URL">
+        <br>description
+        <input type="text" name="description" placeholder="Populate Description">
+
+        <br>bookshelf
+        <select name="bookshelf" placeholder="Populate bookshelf">
+            <% bookshelf.forEach(data=>{ %>
+            <option value='<%=data.bookshelf%>'> <%=data.bookshelf%> </option>
+            <%})%>
+        </select>
+
+        <br>
+        <button type="submit">Update Book</button>
+
+    </form>
+
+   
+
+
+</section>
+
+
+

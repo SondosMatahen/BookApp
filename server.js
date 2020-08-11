@@ -6,6 +6,7 @@ const cors = require('cors');
 const superagent = require('superagent');
 const pg = require('pg');
 const app = express();
+const methodOverride = require('method-override')
 
 app.set('view engine', 'ejs');
 
@@ -16,8 +17,10 @@ const client = new pg.Client(process.env.DATABASE_URL);
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(methodOverride('_method'))
 app.use(express.static('./public'))
+
+
 
 client.connect().then(() => {
   app.listen(PORT, () => {
@@ -40,8 +43,62 @@ app.get('/search/new', (req, res) => {
   res.render('pages/searches/new');
 });
 
+app.get('/update/:book_id',(req,res)=>{
+
+  let SQL = 'select * from books where id=$1';
+  let id = [req.params.book_id];
+  let sql='select bookshelf from books;';
+
+  console.log(id);
+  return client.query(SQL ,id )
+    .then(results => {
+
+    client.query(sql).then(data=>{
+      console.log(data.rows)
+      console.log(results.rows)
+
+      res.render('pages/books/edit', { result: results.rows[0] , bookshelf:data.rows })
+    
+    })
+    
+     
+    })
+// res.render('pages/books/edit')
+})
+
 
 app.post('/books', hadeladd);
+
+
+app.post('/books', hadeladd);
+
+app.put('/books/:book_id', handelUpdate)
+
+
+function handelUpdate(req,res){
+  // let sql='select * from books;'
+  // let bookCount;
+  let SQL='update books set  author=$1 , title=$2 , isban=$3 , image_url=$4 , description=$5 , bookshelf=$6  where id=$7;';
+  // let {author ,title }
+  let { author, title, isbn, image_url, description ,bookshelf} = req.body;
+  let id= req.params.book_id;
+  let values=[author,title,isbn,image_url,description,bookshelf,id];
+  console.log(values)
+
+
+  // client.query(sql)
+  // .then(results => {
+
+  //   bookCount = results.rowCount
+  //   console.log(bookCount)
+  // })
+
+return client.query(SQL,values)
+.then(()=>{
+
+      res.redirect(`/books/${id}`)
+     })
+}
 
 
 
@@ -56,6 +113,7 @@ function hadelHome(req, res) {
       res.render('pages/index', { books: results.rows, bookCount: results.rowCount })
     })
   // .catch(err => handleError(err, response));
+
 
 }
 
