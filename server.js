@@ -70,7 +70,7 @@ function handelSelectBook(req, res) {
   return client.query(SQL, id)
     .then(results => {
 
-      res.render('pages/books/detail', { result: results.rows[0] })
+      res.render('pages/books/show', { result: results.rows[0] })
     })
 
 }
@@ -119,12 +119,8 @@ function hadnelSearch(req, res) {
 
 function hadeladd(req, res) {
 
-
-
-  console.log(req.body);
+  // console.log(req.body);
   let { author, title, isbn, image_url, description, bookshelf } = req.body;
- 
-
   const SQL = 'INSERT INTO books (author,title,isban,image_url,description,bookshelf) VALUES ($1, $2, $3, $4, $5, $6);';
   let values = [author, title, isbn,  image_url, description, bookshelf];
   let sql = 'select * from books;';
@@ -146,6 +142,10 @@ function hadeladd(req, res) {
 
 
 }
+
+
+
+
 
 
 

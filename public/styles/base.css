@@ -92,11 +92,11 @@ header{
         margin-top: 10px;
     }
     .result p{
-        height:20px;
+        height:40px;
         overflow: scroll;
     }
     .addForm{
-        visibility: hidden;
+        /* visibility: hidden; */
         margin-bottom: 40px;
     }
     /* #submit{
