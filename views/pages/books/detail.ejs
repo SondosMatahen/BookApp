@@ -8,7 +8,9 @@
     <p>Bookshelf :<%= result.bookshelf %></p>
 
   </div>
-  <!-- <button>Update Details</button>
-          <button>Remove</button> -->
+  <div>
+    <a href="/update/<%= result.id%>"><button type="submit">Update Details</button></a>
+    <a href="/remove/<%= result.id%>"><button type="submit">Remove</button></a>
+
   </div>
 </section>
