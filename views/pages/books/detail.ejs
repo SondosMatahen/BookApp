@@ -10,7 +10,11 @@
   </div>
   <div>
     <a href="/update/<%= result.id%>"><button type="submit">Update Details</button></a>
-    <a href="/remove/<%= result.id%>"><button type="submit">Remove</button></a>
+
+    <form action="/books/<%= result.id %>?_method=DELETE" method="POST">
+    <button type="submit">Remove</button>
+    </form>
+   
 
   </div>
 </section>
