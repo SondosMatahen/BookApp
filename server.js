@@ -47,7 +47,7 @@ app.get('/update/:book_id',(req,res)=>{
 
   let SQL = 'select * from books where id=$1';
   let id = [req.params.book_id];
-  let sql='select bookshelf from books;';
+  let sql='select DISTINCT bookshelf from books;';
 
   console.log(id);
   return client.query(SQL ,id )
@@ -63,7 +63,7 @@ app.get('/update/:book_id',(req,res)=>{
     
      
     })
-// res.render('pages/books/edit')
+
 })
 
 
@@ -74,24 +74,18 @@ app.post('/books', hadeladd);
 
 app.put('/books/:book_id', handelUpdate)
 
+app.delete('/books/:book_id', handelDelete)
+
 
 function handelUpdate(req,res){
-  // let sql='select * from books;'
-  // let bookCount;
+
   let SQL='update books set  author=$1 , title=$2 , isban=$3 , image_url=$4 , description=$5 , bookshelf=$6  where id=$7;';
-  // let {author ,title }
+
   let { author, title, isbn, image_url, description ,bookshelf} = req.body;
   let id= req.params.book_id;
   let values=[author,title,isbn,image_url,description,bookshelf,id];
   console.log(values)
 
-
-  // client.query(sql)
-  // .then(results => {
-
-  //   bookCount = results.rowCount
-  //   console.log(bookCount)
-  // })
 
 return client.query(SQL,values)
 .then(()=>{
@@ -101,6 +95,19 @@ return client.query(SQL,values)
 }
 
 
+
+function handelDelete(req,res){
+
+  let SQL='delete from books where id=$1;';
+  let id= [req.params.book_id];
+  console.log(id)
+
+return client.query(SQL,id)
+.then(()=>{
+
+      res.redirect(`/`)
+     })
+}
 
 
 function hadelHome(req, res) {
