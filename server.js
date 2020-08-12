@@ -67,7 +67,7 @@ app.get('/update/:book_id',(req,res)=>{
 })
 
 
-app.post('/books', hadeladd);
+// app.post('/books', hadeladd);
 
 
 app.post('/books', hadeladd);
@@ -134,7 +134,7 @@ function handelSelectBook(req, res) {
   // console.log(id);
   return client.query(SQL, id)
     .then(results => {
-
+     console.log(results)
       res.render('pages/books/show', { result: results.rows[0] })
     })
 
