@@ -1,33 +1,44 @@
-<section>
 
-    <form action="/books/<%= result.id %>?_method=PUT" method="POST">
-        title
-        <input type="text" name="title" placeholder="Populate Title">
-        <br>author
-        <input type="text" name="author" placeholder="Populate Author">
-        <br>isbn
-        <input type="text" name="isbn" placeholder="Populate ISBN">
-        <br>image_url
-        <input type="text" name="image_url" placeholder="Populate Image URL">
-        <br>description
-        <input type="text" name="description" placeholder="Populate Description">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../layout/head')%>
+</head>
+<body>
+    <%- include('../../layout/header')%>
+<h4>Update Book</h4>
 
-        <br>bookshelf
-        <select name="bookshelf" placeholder="Populate bookshelf">
-            <% bookshelf.forEach(data=>{ %>
-            <option value='<%=data.bookshelf%>'> <%=data.bookshelf%> </option>
-            <%})%>
-        </select>
+    <section class='formUpdate'>
+        <form action="/books/<%= result.id %>?_method=PUT" method="POST">
+          
+            <input type="text" name="title" placeholder="Populate Title"  value="<%=result.title%>">
+            <br> <br>
+            <input type="text" name="author"  value="<%=result.authors%>">
+            <br> <br>
+            <input type="text" name="isbn" placeholder="Populate ISBN"  value="<%=result.isbn%>">
+            <br> <br>
+            <input type="text" name="image_url" placeholder="Populate Image URL" value="<%=result.img%>">
+            <br> <br>
+            <!-- <input type="text" name="description" placeholder="Populate Description"  value="<%=result.description%>"> -->
+           
+            <textarea  id="description"  type="text" name="description" rows="6"   cols="15">   <%=result.description%>   </textarea>
+            <br>  <br>
+            <select name="bookshelf" placeholder="Populate bookshelf">
+                <% bookshelf.forEach(data=>{ %>
+                <option value='<%=data.bookshelf%>'> <%=data.bookshelf%> </option>
+                <%})%>
+            </select>
+    
+            <br>  <br>
+            <button type="submit" class="updatesubimt">Update Book</button>
+        </form> 
+    </section>
+    
+  
 
-        <br>
-        <button type="submit">Update Book</button>
-
-    </form>
-
-   
-
-
-</section>
+    <%- include('../../layout/footer')%>
+</body>
+</html>
 
 
 

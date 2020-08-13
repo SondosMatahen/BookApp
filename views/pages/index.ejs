@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../layout/head')%>
-    <title>Book App</title>
+
 </head>
 
 <body>
-   
+    <%- include('../layout/header')%>
     <!-- <header> <a href='/hello'>Hello World</a></header> -->
-    <h1>Hello World</h1>
-    <h2><%= bookCount %> Saved Books</h2>
-    <a href='/search/new'>search</a>
+    <!-- <h1>Hello World</h1> -->
+    <h4 id='savedbook'><%= bookCount %> Saved Books</h4>
+    <!-- <a href='/search/new'>search</a> -->
+
+
     <ul>
         <% books.forEach(book=>{ %>
-           <div id='result'><img src='<%= book.image_url %>'>
+        <div class='resulthome'><img src='<%= book.image_url %>'>
+            <br> <br>
+            <h3><%= book.title %></h2>
             <br>
-            <h3><%= book.title %></h2> 
+            <h5><%= book.author %></h4>
             <br>
-             <h5><%= book.author %></h4>
             <a href="/books/<%= book.id%>"><button>View Details</button></a>
-          
-            <!-- <p> <%= book.description %> </p> -->
-            </div> 
-       <% }) %>
-        
+        </div>
+        <% }) %>
+
     </ul>
+
+
+    <%- include('../layout/footer')%>
 </body>
+
 </html>

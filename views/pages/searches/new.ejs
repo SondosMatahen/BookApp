@@ -4,7 +4,8 @@
   <%- include('../../layout/head')%>
     
 <body>
-    <header> <h2> Best Books!</h2></header>
+    <%- include('../../layout/header')%>
+    <!-- <header> <h2> Best Books!</h2></header> -->
     <p class='para'>Search by Title or Author</p>
     <main>
     <form action="/searches" method="POST">
@@ -24,6 +25,7 @@
 
     </form>
 </main>
+<%- include('../../layout/footer')%>
 </body>
 
 </html>

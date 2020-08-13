@@ -1,32 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Niconne&family=Tangerine:wght@700&display=swap');
+
+
 @media (min-width: 360px) and (max-width: 736px){
 
     body{
 
         background-color: rgb(165, 154, 154);
     }
-header{
-    background-color: black;
-    height:80px ;
-    color: blanchedalmond;
-}
-    h2{
-        color: rgb(228, 216, 216);
-        font-size: 200%;
-        padding-top: 4%;
-        padding-left: 4%;
+    header{
+        background-color: black;
+        height:80px ;
+        color: blanchedalmond;
     }
-    .para{
-        text-align: center;
-        background-color:rgb(105, 103, 103) ;
-        height: 40px;
-        color: white;
-        padding-top: 4%;
-        margin-bottom: 20px;
-        font-size: 150%;
-    }
+/* Home Page*/
 
-    main{
-        margin-top: 50px;
+#savedbook{
+    text-align: center;
+    background-color: rgb(78, 76, 76);
+    padding-top: 5px;
+    height: 25px;
+    color: rgb(180, 147, 180);
+    font-family: 'Tangerine', cursive;
+}
+.resulthome{
+    margin-top: 30px;
+    height: 350px; 
+    width: 80%;
+   background-color: thistle;
+   margin-left: 10%;
+   margin-bottom: 10%;
+   text-align: center;
+   align-items: center;
+   align-content: center;  
+   font-family: 'Tangerine', cursive;
+   
+} 
+.resulthome img{
+    margin-top: 20px;
+    height: 200px;
+    width: 50%;
+ }
+ .resulthome button{
+    font-family: 'Charm', cursive;
+
+    background-color: black;
+    color: cornsilk;
+    font-size: 120%;
+ }
+
+ /*  search  */
+
+ .para{
+    text-align: center;
+    background-color:rgb(105, 103, 103) ;
+    height: 40px;
+    color: white;
+    padding-top: 4%;
+    margin-bottom: 20px;
+    font-size: 150%;
+}
+
+#input  {
+  
+    height: 98%;
+    width: 98%;
+    border-radius: 3%;
+   
     }
     form div{
         height: 50px;
@@ -36,13 +76,7 @@ header{
         border-radius: 3%;
         margin-left: 10%;
     }
-    #input  {
-    /* background-color: rgb(241, 241, 240); */
-    height: 98%;
-    width: 98%;
-    border-radius: 3%;
-   
-    }
+  
     form div label{
    
         padding-left: 20px;
@@ -54,12 +88,29 @@ header{
     }
     #title,#author{
 
-  margin: 20px;
-    }
-    #title{
-
-        margin-left: 42px;
+        margin: 20px;
           }
+          #title{
+      
+              margin-left: 42px;
+                }
+       
+          .submit{
+       margin-left:10%;
+       margin-bottom: 20%;
+          }
+        
+
+ /* show search  */
+
+
+    h2{
+        color: rgb(228, 216, 216);
+        font-size: 200%;
+        padding-top: 4%;
+        padding-left: 4%;
+    }
+ 
     .sub {
         margin-top: 20px ;
         background-color: #000;
@@ -71,17 +122,21 @@ header{
        
         visibility: visible;
     }
-    .submit{
- margin-left:10%;
+    main{
+        margin-top: 50px;
     }
-  
+
     .result{
-        height: 500px; 
+        height: 550px; 
          width: 80%;
         background-color: thistle;
         margin-left: 10%;
         margin-bottom: 10%;
         text-align: center;
+        align-items: center;
+        align-content: center;
+        font-family: 'Charm', cursive;
+        
     } 
     .result img{
        margin-top: 20px;
@@ -92,16 +147,62 @@ header{
         margin-top: 10px;
     }
     .result p{
-        height:40px;
+        margin: auto;
+        text-align: center;
+        width: 310px;
+        border:1px solid black;
+        height:60px;
         overflow: scroll;
+        background-color: rgb(221, 218, 218);
     }
     .addForm{
-        /* visibility: hidden; */
+
         margin-bottom: 40px;
     }
-    /* #submit{
-       visibility: visible;
-    } */
+
+     /* detail  */
+     .detail{
+         margin-top: 20px;
+         height: 600px;
+     }
+     .detailFrom{
+        margin-top: 5%;
+     }
+     #updat{
+         float: left;
+         margin-left: 12%;
+         font-family: 'Charm', cursive;
+     }
+     #updat,#remove{
+        font-family: 'Charm', cursive;
+        font-family: 'Charm', cursive;
+
+        background-color: black;
+        color: cornsilk;
+        font-size: 120%;
+     }
+
+     /*update book*/
+     .formUpdate{
+         align-items: center;
+         align-content: center;
+         text-align: center;
+     }
+     .formUpdate input, .formUpdate select,.formUpdate  #description{
+         width: 300px;
+         border-radius: 3%;
+     }
+     .formUpdate  #description{
+         height: 100px;
+     }
+    .updatesubimt {
+        font-family: 'Charm', cursive;
+
+        background-color: black;
+        color: cornsilk;
+        font-size: 120%;
+     }
+    
 
 }
 
