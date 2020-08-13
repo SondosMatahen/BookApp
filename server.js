@@ -22,12 +22,6 @@ app.use(express.static('./public'))
 
 
 
-client.connect().then(() => {
-  app.listen(PORT, () => {
-    console.log(`listening to port ${PORT}`);
-  });
-
-})
 
 
 
@@ -249,8 +243,10 @@ function Book(data) {
 
 
 //-----listening to port------
-app.listen(PORT, () => {
-  console.log(`listening to port ${PORT}`);
-});
 
+client.connect().then(() => {
+  app.listen(PORT, () => {
+    console.log(`listening to port ${PORT}`);
+  });
 
+})
