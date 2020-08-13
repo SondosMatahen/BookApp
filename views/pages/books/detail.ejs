@@ -1,20 +1,25 @@
 <section>
-  <div>
-    <img src="<%= result.image_url %>">
+  <div class='result detail'>
+    <img src='<%= result.image_url %>'>
+    <br>
     <h3>Title :<%= result.title%></h3>
+    <br>
     <h4>Author :<%= result.author %></h4>
+    <br>
     <p>description :<%= result.description %></p>
-    <p>ISBN :<%= result.isban %></p>
-    <p>Bookshelf :<%= result.bookshelf %></p>
-
-  </div>
-  <div>
-    <a href="/update/<%= result.id%>"><button type="submit">Update Details</button></a>
+    <br>
+    <h4>ISBN :<%= result.isban %></h4>
+    <br>
+    <h4>Bookshelf :<%= result.bookshelf %></h4>
+    <br>
+ 
+  <div class='detailFrom'>
+    <a href="/update/<%= result.id%>"><button type="submit" id='updat'>Update Details</button></a>
 
     <form action="/books/<%= result.id %>?_method=DELETE" method="POST">
-    <button type="submit">Remove</button>
+    <button type="submit" id='remove'>Remove</button>
     </form>
    
-
+  </div>
   </div>
 </section>
